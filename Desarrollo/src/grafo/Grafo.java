@@ -21,7 +21,7 @@ public class Grafo {
 				this.cantidadDeNodos = entrada.nextInt();
 				this.cantidadDeAristas = entrada.nextInt();
 				
-				matriz = new MatrizSimetrica(this.cantidadDeNodos);
+				matriz = new MatrizSimetrica(this.cantidadDeNodos);		//Crea la matriz Simetrica
 				
 				this.porcentajeAdyacencia = entrada.nextDouble();
 				this.gradoMaximo = entrada.nextInt();
@@ -40,4 +40,14 @@ public class Grafo {
 			entrada.close();
 		}
 	}
+	
+	
+	public Grafo(MatrizSimetrica matriz, int cantNodos, int cantAristas, double PorcAdyacencia) {
+		this.matriz=matriz;
+		this.cantidadDeNodos=cantNodos;
+		this.cantidadDeAristas=cantAristas;
+		this.porcentajeAdyacencia=PorcAdyacencia;
+	}
+	
+	
 }

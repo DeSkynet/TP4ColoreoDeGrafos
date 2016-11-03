@@ -29,4 +29,10 @@ public class MatrizSimetrica {
 		int indice = (int)(fila * this.posiciones + columna- (Math.pow(fila, 2) + 3 * fila + 2)/2);
 		return this.matrizEnVector[indice];
 	}	
+	
+	public int getCantAristas(){
+		return matrizEnVector.length;
+	}
+	
+	
 }

@@ -49,7 +49,29 @@ public class GeneradorDeGrafos {
 //	}
 	
 	
-	
+//	public static Grafo generarRegularNYGrado(int cantNodos, int grado) {
+//		MatrizSimetrica matriz;
+//		int cantidadAristas = 0;
+//		double porcentajeDeAdyacencia;
+//		
+//		if(grado >= cantNodos) {
+//			System.out.println("No se puede generar el grafo.");
+//			return null;
+//		}
+//		
+//		matriz = new MatrizSimetrica(cantNodos);
+//		
+//		if(cantNodos%2==0) {  // SITUACION: CANTNODOS ES PAR
+//			if(grado%2==1) {
+//				if(grado > 1) {
+//					for (int i = 0; i < cantNodos; i++) {
+//						matriz.setMatrizSimetrica(i, (i+1)%(cantNodos-1));
+//					}
+//				}
+//				
+//			}
+//		}
+//	}
 	
 	
 	

@@ -34,5 +34,9 @@ public class MatrizSimetrica {
 		return matrizEnVector.length;
 	}
 	
+	public int getPosiciones() {
+		return this.posiciones;
+	}
+	
 	
 }

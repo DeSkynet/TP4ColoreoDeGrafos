@@ -49,5 +49,9 @@ public class Grafo {
 		this.porcentajeAdyacencia=PorcAdyacencia;
 	}
 	
+	public MatrizSimetrica getMatrizSimetrica() {
+		return this.matriz;
+	}
+	
 	
 }

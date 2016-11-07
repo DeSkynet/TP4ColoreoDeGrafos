@@ -1,9 +1,12 @@
 package grafo;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class Grafo {
+public class GrafoNDNP {
+	private Coloreo coloreo;
 	private MatrizSimetrica matriz;
 	private int cantidadDeNodos;
 	private int cantidadDeAristas;
@@ -11,7 +14,7 @@ public class Grafo {
 	private int gradoMaximo;
 	private int gradoMinimo;
 	
-	public Grafo(String path) {
+	public GrafoNDNP(String path) {
 		Scanner entrada = null;
 		
 		try {
@@ -32,6 +35,8 @@ public class Grafo {
 					int columna = entrada.nextInt();
 					matriz.setMatrizSimetrica(fila, columna);
 				}
+				
+				this.coloreo = new Coloreo(this.matriz);
 			}
 			
 		} catch (Exception e) {
@@ -42,7 +47,7 @@ public class Grafo {
 	}
 	
 	
-	public Grafo(MatrizSimetrica matriz, int cantNodos, int cantAristas, double PorcAdyacencia) {
+	public GrafoNDNP(MatrizSimetrica matriz, int cantNodos, int cantAristas, double PorcAdyacencia) {
 		this.matriz=matriz;
 		this.cantidadDeNodos=cantNodos;
 		this.cantidadDeAristas=cantAristas;
@@ -53,5 +58,29 @@ public class Grafo {
 		return this.matriz;
 	}
 	
+	public Coloreo getColoreo() {
+		return coloreo;
+	}
+	
+	public void grabarSalidaGrafo(String pathOut) {
+		PrintWriter salida = null;
+		
+		try {
+			salida = new PrintWriter(new File(pathOut));
+			
+			salida.print(this.coloreo.getCantNodos() + " " + this.coloreo.getCantidadDeColores() + " ");
+			salida.print(this.coloreo.getCantAristas() + " " + this.porcentajeAdyacencia + " ");
+			salida.println(this.gradoMaximo + " " + this.gradoMinimo);
+			
+			for (int i = 0; i < coloreo.getCantNodos(); i++) {
+				salida.println(coloreo.nodos.get(i).getNumero() + " " + coloreo.nodos.get(i).getColor());
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			salida.close();
+		}
+	}
 	
 }

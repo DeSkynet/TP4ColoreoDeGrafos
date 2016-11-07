@@ -8,7 +8,7 @@ public class GeneradorDeGrafos {
 	private boolean[] matrizEnVector;
 	private int posiciones;
 	
-	public static Grafo generarAleatorioNYProbabilidad(int cantNodos,double probabilidad){	//Probabilidad ejemplo= 0,5
+	public static GrafoNDNP generarAleatorioNYProbabilidad(int cantNodos,double probabilidad){	//Probabilidad ejemplo= 0,5
 		Random arista = new Random();
 		int cantAristas=0;
 		MatrizSimetrica matriz=new MatrizSimetrica(cantNodos);
@@ -23,7 +23,7 @@ public class GeneradorDeGrafos {
 			}
 		}
 		double porcentajeDeAdyacencia=(cantAristas *100/ matriz.getCantAristas());
-		Grafo grafo=new Grafo(matriz,cantNodos,cantAristas,porcentajeDeAdyacencia);
+		GrafoNDNP grafo=new GrafoNDNP(matriz,cantNodos,cantAristas,porcentajeDeAdyacencia);
 		return grafo;
 	}
 	

@@ -1,20 +1,18 @@
 package grafo;
 
 public class Nodo implements Comparable<Nodo>{
-	private int posicion;
 	private int color;
 	private int numero;
 	private int grado;
 	
 	public Nodo() {
-		this.posicion = 0;
+
 		this.numero = 0;
 		this.color = 0;
 		this.grado = 0;
 	}
 	
-	public Nodo(int posicion,int numero, int color, int grado) {
-		this.posicion = posicion;
+	public Nodo(int numero, int color, int grado) {
 		this.numero = numero;
 		this.color = color;
 		this.grado = grado;
@@ -44,13 +42,6 @@ public class Nodo implements Comparable<Nodo>{
 		this.grado = grado;
 	}
 	
-	public int getPosicion() {
-		return posicion;
-	}
-
-	public void setPosicion(int posicion) {
-		this.posicion = posicion;
-	}
 
 	@Override
 	public int compareTo(Nodo o) {

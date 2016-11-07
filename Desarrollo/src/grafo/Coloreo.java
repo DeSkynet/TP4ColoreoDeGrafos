@@ -1,7 +1,6 @@
 package grafo;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Coloreo {
 	private int cantNodos;
@@ -17,7 +16,7 @@ public class Coloreo {
 		this.cantAristas = matrizSimetrica.getCantAristas();
 		
 		 for (int i = 0; i < this.cantNodos; i++) {
-			nodos.add(new Nodo(i,i, 0, 0));
+			nodos.add(new Nodo(i, 0, 0));
 		}
 		 
 		for (int i = 0; i < this.cantNodos; i++) {
@@ -149,7 +148,35 @@ public class Coloreo {
 		}
 	}
 	
-	
+	public int getCantNodos() {
+		return cantNodos;
+	}
+
+
+	public void setCantNodos(int cantNodos) {
+		this.cantNodos = cantNodos;
+	}
+
+
+	public int getCantAristas() {
+		return cantAristas;
+	}
+
+
+	public void setCantAristas(int cantAristas) {
+		this.cantAristas = cantAristas;
+	}
+
+
+	public int getCantidadDeColores() {
+		return cantidadDeColores;
+	}
+
+
+	public void setCantidadDeColores(int cantidadDeColores) {
+		this.cantidadDeColores = cantidadDeColores;
+	}
+
 	public void printearColoreo() {
 		for (int i = 0; i < this.cantNodos; i++) {
 			System.out.print("Nodo:" + nodos.get(i).getNumero());
@@ -157,255 +184,4 @@ public class Coloreo {
 			System.out.println(" Color:" + nodos.get(i).getColor());
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//COMETE ERROR EN UN SOLO NODO
-	
-//	public void algoritmoSecuencial() {
-//		int color = 0;
-//		for (int i = 0; i < matrizSimetrica.getPosiciones(); i++) {
-//			
-//			if(nodo[i].getColor() == 0) {
-//				if(i!=0)
-//					nodo[i].setColor(teoCuatroColores[color+1]);
-//				else
-//					nodo[i].setColor(teoCuatroColores[color]);
-//			}
-//		
-//		for(int j= i+1; j < matrizSimetrica.getPosiciones(); j++) {
-//			if(matrizSimetrica.getMatrizSimetrica(i, j) == true) {
-//				if(nodo[j].getColor() == 0) {
-//					color = 0;
-//					nodo[j].setColor(teoCuatroColores[color]);		
-//				}
-//				
-//				if(nodo[i].getColor() == nodo[j].getColor()) {
-//					if(nodo[i].getColor() == 0) color++;
-//					else color --;
-//					nodo[j].setColor(teoCuatroColores[color]);
-//				}
-//			}	
-//		}
-//		
-//		if(nodo[i].getNumero() == (matrizSimetrica.getPosiciones() -1)) {
-//			color++;
-//			nodo[i].setColor(teoCuatroColores[color]);
-//		}
-//	  }
-//	}
 }
